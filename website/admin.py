@@ -6,7 +6,7 @@ class SobreAdmin(admin.ModelAdmin):
     list_display = ('quemsomos',) 
 
 class EspecialidadesAdmin(admin.ModelAdmin):
-    list_display = ('especialidade','descricao_especialidade',)
+    list_display = ('nome_especialidade','descricao_especialidade',)
     
 class DepoimentosAdmin(admin.ModelAdmin):
      list_display = ('cliente_depoimento', 'depoimento',)

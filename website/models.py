@@ -11,11 +11,11 @@ class Sobre(models.Model):
 
 class Especialidades(models.Model):
     id = models.AutoField(primary_key=True)
-    especialidade = models.CharField(max_length=100, blank=True,null=True)
+    nome_especialidade = models.CharField(max_length=100, blank=True,null=True)
     descricao_especialidade = models.TextField(default="Escreva sobre a especialidade", null=True)
 
     def __str__(self):
-        return self.especialidade
+        return self.nome_especialidade
 
 class Depoimentos(models.Model):
     id = models.AutoField(primary_key=True)

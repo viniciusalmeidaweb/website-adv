@@ -1,26 +1,28 @@
-"""
-URL configuration for app project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from website.views import home_view
+from website.views import HomeListView, EspecialidadeDetailView
+
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("home/", home_view),
+    path('admin/', admin.site.urls),
+    path('home/', HomeListView.as_view(), name="sobre"), 
+    path('especialidade/<int:pk>/', EspecialidadeDetailView.as_view(), name='especialidade_detail'),
+
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
+
+
+
+
+
+
+#Você não pode passar a mesma rota pra duas views diferentes
+#Se na rota você quer exibir informações de especialidade, serviços, quem somos. Você deve passar eles todos no contexto de uma única view que utiliza essa rota
+    #E não um contexto em cada view. Se não dá BO. O django vai usar a primeira view qye consome aquela rota, Que no caso é home
