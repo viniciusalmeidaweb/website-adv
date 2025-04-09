@@ -7,7 +7,7 @@
       <div class="overlay"></div>
         <div class="jumbotron jumbotron-bgk">
           <div class="container">
-            <h1 class="display-3">Advocacia especializada.</h1>
+            <h1 class="display-3">Advocacia <br> Especializada</h1>
             <p>Direito consumidor, digital e previdenciário.</p>
           </div>
         </div>
@@ -95,10 +95,36 @@
       {% else %}
           <p>Sem cadastros de Especialidades.</p>
     {% endif %}
-
-            
-
         </div>
+    </div>
+  </div>
+</section>
+
+<section class="team py-5">
+  <div class="container">
+    <div class="row">
+      {% if especialidade_list %}
+      {% for especialidade in especialidade_list %}
+          <div class="col-4 text-center">   
+            <article>           
+              <div class="card">
+                <img class="card-img-top" src="https://placehold.co/64x64" alt="Imagem de capa do card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ especialidade.nome_especialidade }}</h5>
+                  <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                  <a href="{% url 'especialidade_detail' especialidade.pk %}" class="btn btn-primary">Visitar</a>
+                </div>
+              </div>
+            </article>
+          </div>
+      {% endfor %}
+      
+      {% else %}
+          <p>Sem cadastros de Especialidades.</p>
+    {% endif %}
+        </div>
+
+
     </div>
   </div>
 </section>

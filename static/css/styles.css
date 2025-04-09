@@ -12,6 +12,10 @@ body {
     background-color: transparent;
 }
 
+.navbar-bg-dark {
+    background-color: black;
+}
+
 img.logo-site{
     height: 90px;
 }
@@ -23,10 +27,10 @@ img.logo-site{
     background-size: cover; /* A imagem cobre toda a área do div */
     background-position: center; /* Centraliza a imagem */
     min-height: 100vh; /* Define a altura do div como 100% da altura da janela */
-    display: flex; /* Flexbox para centralizar o conteúdo */
-    justify-content: center; /* Alinha o conteúdo horizontalmente */
+    display: grid; /* Flexbox para centralizar o conteúdo */
+    /*justify-content: center; /* Alinha o conteúdo horizontalmente */
     align-items: center; /* Alinha o conteúdo verticalmente */
-    text-align: center; /* Centraliza o texto */
+    /*text-align: center; /* Centraliza o texto */
     color: white; /* Cor do texto */
     padding: 20px; /* Espaçamento interno */
     box-sizing: border-box; /* Inclui o padding no tamanho total do div */
@@ -39,7 +43,7 @@ img.logo-site{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Sobreposição preta com 50% de opacidade */
+    background-color: rgba(0, 0, 0, 0.7); /* Sobreposição preta com 50% de opacidade */
   }
 
 
@@ -51,10 +55,17 @@ img.logo-site{
 }
 
 .about{
-    background-color: rgb(179 133 45);
+    /*background-color: #B3852D;*/
+    background-color: #293A4A;
 
 }
 
-.services article{
+.services, article{
     
+}
+
+
+.team{
+    background-color: #B3852D
+
 }
