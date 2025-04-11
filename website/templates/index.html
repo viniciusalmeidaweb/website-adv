@@ -19,12 +19,13 @@
 <section class="about text-white py-5">
   <div class="container">
     <div class="row">
-    <div class="col-6">
-
+    <div class="col-7">
+      <h2 class="font-weight-bold">Excelência, Ética e Compromisso!</h2>
+      <br>
 
       {% if sobre_list %}
       {% for sobre in sobre_list %}
-      <p>{{ sobre.quemsomos|linebreaksbr }}</p>
+      <p class="font-weight-light">{{ sobre.quemsomos|linebreaksbr }}</p>
       {% endfor %}
 
       {% else %}
@@ -39,28 +40,33 @@
                 -->        
     </div>
 
-    <div class="col-6">
+    <div class="col-5">
 
       <ul class="list-unstyled">
         <li class="media">
-          <img class="mr-3" src="https://placehold.co/64x64" alt="Imagem de exemplo genérica">
+          <img class="mr-3" src="/media/icones/002-justica.png" alt="Imagem de exemplo genérica">
           <div class="media-body">
-            <h5 class="mt-0 mb-1">Compromisso com a Justiça</h5>
+            <h5 class="mt-0 mb-1 font-weight-bold">Compromisso com a Justiça</h5>
+            <p class="font-weight-light">
             Acreditamos no poder da justiça e trabalhamos com dedicação para garantir que seus direitos sejam respeitados. Nossa missão é fornecer serviços jurídicos de alta qualidade, com ética e transparência.
+          </p>
           </div>
         </li>
         <li class="media my-4">
-          <img class="mr-3" src="https://placehold.co/64x64" alt="Imagem de exemplo genérica">
+          <img class="mr-3" src="/media/icones/003-justica-1.png" alt="Imagem de exemplo genérica">
           <div class="media-body">
-            <h5 class="mt-0 mb-1">Soluções Jurídicas Personalizadas</h5>
-            Defendemos seus direitos com estratégias jurídicas personalizadas para cada caso. Conte com nossa equipe experiente para resolver suas questões legais com seriedade e comprometimento.
+            <h5 class="mt-0 mb-1 font-weight-bold">Soluções Jurídicas Personalizadas</h5>
+            <p class="font-weight-light">
+              Defendemos seus direitos com estratégias jurídicas personalizadas para cada caso. 
+            Conte com nossa equipe experiente para resolver suas questões legais com seriedade e comprometimento.
+          </p>
           </div>
         </li>
         <li class="media">
-          <img class="mr-3" src="https://placehold.co/64x64" alt="Imagem de exemplo genérica">
+          <img class="mr-3" src="/media/icones/005-livro-de-leis.png" alt="Imagem de exemplo genérica">
           <div class="media-body">
-            <h5 class="mt-0 mb-1">Confiança e Resultados</h5>
-            Nossa história é construída com base na confiança dos nossos clientes e nos resultados que alcançamos. Trabalhamos para proporcionar segurança jurídica e soluções eficazes.
+            <h5 class="mt-0 mb-1 font-weight-bold">Confiança e Resultados</h5>
+            <p class="font-weight-light">Nossa história é construída com base na confiança dos nossos clientes e nos resultados que alcançamos. Trabalhamos para proporcionar segurança jurídica e soluções eficazes.</p>
           </div>
         </li>
       </ul>
