@@ -16,7 +16,7 @@
 
 
         <!-- Seção sobre -->
-<section class="about text-white py-5">
+<section class="about py-5">
   <div class="container">
     <div class="row">
     <div class="col-7">
@@ -25,7 +25,7 @@
 
       {% if sobre_list %}
       {% for sobre in sobre_list %}
-      <p class="font-weight-light">{{ sobre.quemsomos|linebreaksbr }}</p>
+      <p class="">{{ sobre.quemsomos|linebreaksbr }}</p>
       {% endfor %}
 
       {% else %}
@@ -47,7 +47,7 @@
           <img class="mr-3" src="/media/icones/002-justica.png" alt="Imagem de exemplo genérica">
           <div class="media-body">
             <h5 class="mt-0 mb-1 font-weight-bold">Compromisso com a Justiça</h5>
-            <p class="font-weight-light">
+            <p class="">
             Acreditamos no poder da justiça e trabalhamos com dedicação para garantir que seus direitos sejam respeitados. Nossa missão é fornecer serviços jurídicos de alta qualidade, com ética e transparência.
           </p>
           </div>
@@ -56,7 +56,7 @@
           <img class="mr-3" src="/media/icones/003-justica-1.png" alt="Imagem de exemplo genérica">
           <div class="media-body">
             <h5 class="mt-0 mb-1 font-weight-bold">Soluções Jurídicas Personalizadas</h5>
-            <p class="font-weight-light">
+            <p class="">
               Defendemos seus direitos com estratégias jurídicas personalizadas para cada caso. 
             Conte com nossa equipe experiente para resolver suas questões legais com seriedade e comprometimento.
           </p>
@@ -66,7 +66,7 @@
           <img class="mr-3" src="/media/icones/005-livro-de-leis.png" alt="Imagem de exemplo genérica">
           <div class="media-body">
             <h5 class="mt-0 mb-1 font-weight-bold">Confiança e Resultados</h5>
-            <p class="font-weight-light">Nossa história é construída com base na confiança dos nossos clientes e nos resultados que alcançamos. Trabalhamos para proporcionar segurança jurídica e soluções eficazes.</p>
+            <p class="">Nossa história é construída com base na confiança dos nossos clientes e nos resultados que alcançamos. Trabalhamos para proporcionar segurança jurídica e soluções eficazes.</p>
           </div>
         </li>
       </ul>
@@ -79,56 +79,86 @@
         <!-- Seção de serviços -->
 <section class="services py-5">
     <div class="container">
-      <div class="row">
-        <div class="card-deck">
 
+      <div class="row">
+        <div class="col-sm-12">   
+          <h2>Especialidades</h2>
+          <hr>
+        </div>
+      </div>
+
+
+  <div class="row">
     {% if especialidade_list %}
       {% for especialidade in especialidade_list %}
-          <div class="col-4 text-center">   
+          <div class="col-sm-4">   
             <article>           
-              <div class="card">
-                <img class="card-img-top" src="https://placehold.co/64x64" alt="Imagem de capa do card">
+              <div class="card border-light">
                 <div class="card-body">
-                  <h5 class="card-title">{{ especialidade.nome_especialidade }}</h5>
+
+                {% if especialidade.nome_especialidade == "Direito do Consumidor" %}
+                  <img src="/media/icones/007-deposicao.png">
+                  {% elif especialidade.nome_especialidade == "Direito Digital" %}
+                    <img src="/media/icones/002-intellectual-property.png">
+                  {% elif especialidade.nome_especialidade == "Direito Previdenciário" %}
+                    <img src="/media/icones/001-health-law.png">
+                  {% else %}
+                    <p>Sem cadastro</p>
+                {% endif %}
+
+                <h5 class="card-title mt-3">{{ especialidade.nome_especialidade }}</h5>
                   <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                  <a href="{% url 'especialidade_detail' especialidade.pk %}" class="btn btn-primary">Visitar</a>
+                <div class="alert-light" role="alert">
+                  <a href="{% url 'especialidade_detail' especialidade.pk %}" class="alert-link">Leia mais</a>
                 </div>
+                </div>  
               </div>
-            </article>
+          </article>
           </div>
       {% endfor %}
       
       {% else %}
           <p>Sem cadastros de Especialidades.</p>
     {% endif %}
-        </div>
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
 <section class="team py-5">
   <div class="container">
+
     <div class="row">
-      {% if especialidade_list %}
-      {% for especialidade in especialidade_list %}
-          <div class="col-4 text-center">   
+      <div class="col-sm-12">   
+        <h2>Equipe</h2>
+        <hr>
+      </div>
+    </div>
+
+
+<div class="row">
+      {% if equipe_list %}
+      {% for equipe in equipe_list %}
+          <div class="col-sm-6 text-white">   
             <article>           
-              <div class="card">
-                <img class="card-img-top" src="https://placehold.co/64x64" alt="Imagem de capa do card">
-                <div class="card-body">
-                  <h5 class="card-title">{{ especialidade.nome_especialidade }}</h5>
-                  <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                  <a href="{% url 'especialidade_detail' especialidade.pk %}" class="btn btn-primary">Visitar</a>
-                </div>
+              <div class="card bg-transparent">
+                  <img class="card-img-top img-ajustada " src="{{ equipe.photo.url }}" alt="Imagem de capa do card">
+              <div class="card-header">
+                <h5 class="mb-0">{{ equipe.nome_adv }}</h5>
+              </div>
+
+              <div class="card-body">
+                <p class="card-text">{{ equipe.perfil_adv|linebreaksbr }}</p>
+              </div>
+              
               </div>
             </article>
           </div>
       {% endfor %}
       
       {% else %}
-          <p>Sem cadastros de Especialidades.</p>
+          <p>Sem cadastros de Equipe.</p>
     {% endif %}
-        </div>
+</div>
 
 
     </div>

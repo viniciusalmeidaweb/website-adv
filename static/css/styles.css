@@ -56,11 +56,24 @@ img.logo-site{
 
 .about{
     /*background-color: #B3852D;*/
-    background-color: #293A4A;
+    /*background-color: #293A4A;*/
+    background-color: whitesmoke;
+
+}
+
+.services {
+    
 
 }
 
 .team{
-    background-color: #B3852D;
+    background-color: #293A4A;
 
+}
+
+.img-ajustada {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top; /* centraliza o conteúdo da imagem */
 }
