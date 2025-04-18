@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root{
-    --bs-body-font-family:  font-family: "Roboto", sans-serif;
+  /* --bs-body-font-family:  font-family: "Roboto", sans-serif;*/
 
 }
 
 body {
+    
     font-family: "Roboto", sans-serif !important;
     font-optical-sizing: auto;
     font-style: normal;
     background-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; /* Chrome/Safari */
+    -moz-osx-font-smoothing: grayscale;  /* Firefox */
+     /* Evita distorção por zoom */
+     transform: none;
 }
 
 .navbar-bg-dark {
@@ -17,10 +23,8 @@ body {
 }
 
 img.logo-site{
-    height: 90px;
+    height: 60px;
 }
-
-
 
 .home {
     background-image: url('/media/img/slide.jpg'); /* Coloque o caminho da sua imagem */
@@ -54,26 +58,136 @@ img.logo-site{
     z-index: 1; /* Garante que o texto fique acima do overlay */
 }
 
+.about-img{
+    background-image:  url('/media/img/law-and-authority-lawyer-concept-judgment-gavel-hammer-in-court-courtroom-for-crime-judgement-legislation-and-judicial-decision-free-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 550px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out; /* Transição suave */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  
+    
+}
+
+/* Efeito ao passar o mouse */
+.about-img:hover {
+    transform: scale(1.03); /* Leve zoom */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    filter: brightness(0.9); /* Leve escurecimento */
+}
+
+.sec-title{
+    font-family: "PT Serif", serif;
+    font-display: swap;
+    
+}
+
+h2.sec-title{
+    font-size: 50px;
+       
+}
+
+h5.sec-title{
+    font-size: 25px;
+  
+}
+
 .about{
     /*background-color: #B3852D;*/
     /*background-color: #293A4A;*/
-    background-color: whitesmoke;
+    background-image:  url('/media/img/shape.png');
 
 }
 
 .services {
     
-
+   
+  
+  
+    display: grid; /* Flexbox para centralizar o conteúdo */
+    /*justify-content: center; /* Alinha o conteúdo horizontalmente */
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    /*text-align: center; /* Centraliza o texto */
+     
+    box-sizing: border-box; /* Inclui o padding no tamanho total do div */
+    
+    
+     
 }
 
-.team{
-    background-color: #293A4A;
+.service-card {
+    position: relative;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .04);
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    border-bottom: 6px solid #293A4A;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    transition: all 0.3s ease-in-out; /* Transição suave */
+}
 
+.service-card:hover {
+    transform: scale(1.05); /* Leve aumento no tamanho */
+    background-color: #f5f5f5; /* Altere a cor de fundo */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Mais destaque */
+}
+
+
+.team{
+    background-color: #f5f5f5;
+    background-image:  url('/media/img/team-shape.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  
 }
 
 .img-ajustada {
     width: 100%;
     height: 500px;
     object-fit: cover;
-    object-position: top; /* centraliza o conteúdo da imagem */
+    object-position: top;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out; /* Transição suave */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
+
+.img-ajustada:hover {
+    transform: scale(1.03); /* Leve zoom */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+    filter: brightness(0.9); /* Escurece levemente */
+}
+
+.btn-wbsite {
+    background-color: #B3852D;
+    color: white;
+    font-weight: 300;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-wbsite:hover {
+    background-color: #293A4A;
+    color: white;
+    transform: scale(1.05); /* Leve aumento */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Mais destaque */
+}
+
+.contact{
+    background-color: #293A4A;
+
+
+}
+
+.footer-site{
+    background-color: #f5f5f5;
+
+}
+
