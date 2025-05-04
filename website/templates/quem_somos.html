@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<!-- Page Title -->
+<div class="py-5 mb-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="container-fluid">
+        <h1 class="sec-title font-weight-bold">Quem somos</h1>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- End Page Title -->
+
+
+<section>
+<div class="container">
+  <div class="row">
+    <!--  <div class="col-sm-4">
+      <div class="list-group">
+        <div class="list-group-item bg-light">
+            <h4 class="sec-title font-weight-bold mb-0">Especialidades</h4>
+        </div>
+      {% for especialidade_item in especialidade_lista_itens %}
+        <a href="{% url 'especialidade_detail' especialidade_item.pk %}" class="list-group-item list-group-item-action">
+          {{ especialidade_item.nome_especialidade }}
+        </a>
+      {% endfor %}
+      </div>
+    </div>-->
+
+    <div class="col-sm-12">
+
+      {% if sobre_list %}
+          {% for sobre in sobre_list %}
+          <p class="sec-text">{{ sobre.quemsomos|linebreaksbr }}</p>
+          {% endfor %}
+    
+          {% else %}
+          <p>Informações sobre a empresa não disponíveis.</p>
+      {% endif %}
+    
+      </div>
+  </div>
+</div>
+</section>
+
+<section class="team py-5">
+  <div class="container">
+
+<div class="row">
+      {% if equipe_list %}
+      {% for equipe in equipe_list %}
+          <div class="col-sm-6 text-dark text-center">   
+            <article>           
+              <div class="card border-0 bg-transparent">
+                  <img class="card-img-top img-ajustada" src="{{ equipe.photo.url }}" alt="Imagem de capa do card">
+              <div class="card-header bg-transparent">
+                <h5 class="mb-0 sec-title font-weight-bold">{{ equipe.nome_adv }}</h5>
+              </div>
+
+              <div class="card-body">
+                <p class="card-text text-dark">{{ equipe.perfil_adv|linebreaksbr }}</p>
+              </div>
+              
+              </div>
+            </article>
+          </div>
+      {% endfor %}
+      
+      {% else %}
+          <p>Sem cadastros de Equipe.</p>
+    {% endif %}
+</div>
+</div>
+</section>
+
+<section class="contact py-5">
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="sec-title text-center font-weight-bold text-light">Atendimentos</h2>
+        <hr>
+      </div>
+      </div>
+
+<div class="row">
+  <div class="col-4">
+    <div class="media">
+        <img src="/media/icones/icons8-local-50.png" class="align-self-start mr-3">
+      <div class="media-body">
+        <h5 class="font-weight-bold text-light sec-title">Endereço</h5>
+        <p class="sec-text text-light">Teresina-PI</p>
+      </div>
+    </div>
+</div>
+
+<div class="col-4">
+  <div class="media">
+       <img src="/media/icones/icons8-whatsapp-50.png" class="align-self-start mr-3">
+      <div class="media-body">
+        <h5 class="font-weight-bold text-light sec-title">WhatsApp</h5>
+        <a href="https://wa.me/5599999999999" target="_blank">(86)99999-9999</a>
+        
+      </div>
+  </div>
+</div>
+
+<div class="col-4">
+  <div class="media">
+        <img src="/media/icones/icons8-nova-mensagem-50.png" class="align-self-start mr-3">
+      <div class="media-body">
+        <h5 class="font-weight-bold text-light sec-title">Email</h5>
+        <p class="sec-text text-light">JJadv@gmail.com</p>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+</section>
+
+
+
+
+
+
+   
+
+    <!-- Service Details Section -->
+  <section>
+
+   <p>
+
+
+    
+   </p>
+
+  </section><!-- /Service Details Section -->
+
+  
+
+    {% endblock %}

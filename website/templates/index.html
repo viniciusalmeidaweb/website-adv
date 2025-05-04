@@ -7,7 +7,7 @@
       <div class="overlay"></div>
         <div class="jumbotron jumbotron-bgk">
           <div class="container">
-            <h1 class="display-3 sec-title">Advocacia <br> Especializada</h1>
+            <h1 class="font-weight-bold sec-title">Advocacia <br> Especializada</h1>
             <p>Direito consumidor, digital e previdenciário.</p>
           </div>
         </div>
@@ -79,13 +79,13 @@
 </section>
 
 
-        <!-- Seção de serviços -->
+<!-- Seção de serviços -->
 <section class="services py-5">
     <div class="container">
 
       <div class="row">
         <div class="col-sm-12">   
-          <h2 class="sec-title text-center font-weight-bold">Especialidades</h2>
+          <h2 class="sec-title text-center font-weight-bold">Atuação</h2>
           <hr>
         </div>
       </div>
@@ -99,20 +99,13 @@
               <div class="card service-card">
                 <div class="card-body">
 
-                {% if especialidade.nome_especialidade == "Direito do Consumidor" %}
-                  <img src="/media/icones/007-deposicao.png">
-                  {% elif especialidade.nome_especialidade == "Direito Digital" %}
-                    <img src="/media/icones/002-intellectual-property.png">
-                  {% elif especialidade.nome_especialidade == "Direito Previdenciário" %}
-                    <img src="/media/icones/001-health-law.png">
-                  {% else %}
-                    <p>Sem cadastro</p>
-                {% endif %}
+                  {% if especialidade.icone %}
+                    <img class="mr-3" src="{{ especialidade.icone.url }}" alt="{{ especialidade.nome_especialidade }}">
+                  {% endif %}
 
-                <h5 class="card-title mt-3 sec-title font-weight-bold">{{ especialidade.nome_especialidade }}</h5>
-                  <p class="card-text sec-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-               
-                  <a href="{% url 'especialidade_detail' especialidade.pk %}" class="card-link text-dark">Saiba mais</a>
+                    <h5 class="card-title mt-3 sec-title font-weight-bold">{{ especialidade.nome_especialidade }}</h5>
+                    <p class="card-text sec-text">{{ especialidade.resumo_especialidade }}</p>
+                    <a href="{% url 'especialidade_detail' especialidade.pk %}" class="card-link text-dark">Saiba mais</a>
                 
                 </div>  
               </div>
@@ -124,8 +117,16 @@
           <p>Sem cadastros de Especialidades.</p>
     {% endif %}
 </div>
+
+<div class="row my-4">
+  <div class="col-sm-12 text-center">   
+  <a href="{% url 'especialidades' %}" class="btn btn-wbsite ">Ver áreas de atuação</a>
 </div>
-</section>
+</div>
+
+
+</div>
+</section><!-- FimSeção de serviços -->
 
 <section class="team py-5">
   <div class="container">

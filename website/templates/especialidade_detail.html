@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="container-fluid">
-        <h1>{{ especialidade.nome_especialidade }}</h1>
+        <h1 class="sec-title font-weight-bold">{{ especialidade.nome_especialidade }}</h1>
       </div>
     </div>
   </div>
@@ -16,16 +16,16 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
-      <h4>Nossas Especialidades</h4>
-
-      <div class="list-group">
-      {% for especialidade_item in especialidade_lista_itens %}
-        <a href="{% url 'especialidade_detail' especialidade_item.pk %}" class="list-group-item list-group-item-action">
-          {{ especialidade_item.nome_especialidade }}
-        </a>
-      {% endfor %}
-               
+    <div class="col-sm-12">
+      
+      {% if especialidade.id == 1 %}
+          {% include "direito_previdenciario.html" %}
+      {% elif especialidade.id == 2 %}
+          {% include "direito_digital.html" %}
+      {% elif especialidade.id == 3 %}
+          {% include "direito_consumidor.html" %}
+      {% endif %}
+                  
       </div>
     </div>
   </div>

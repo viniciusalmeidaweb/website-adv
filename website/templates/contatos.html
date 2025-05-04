@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Page Title -->
+<div class="py-5 mb-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="container-fluid">
+        <h1>Contatos</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h4>Nossas Especialidades</h4>
+
+      <div class="list-group">
+      {% for especialidade_item in especialidade_lista_itens %}
+        <a href="{% url 'especialidade_detail' especialidade_item.pk %}" class="list-group-item list-group-item-action">
+          {{ especialidade_item.nome_especialidade }}
+        </a>
+      {% endfor %}
+               
+      </div>
+    </div>
+  </div>
+</div>
+
+  {% if sobre_list %}
+      {% for sobre in sobre_list %}
+      <p class="sec-text">{{ sobre.quemsomos|linebreaksbr }}</p>
+      {% endfor %}
+
+      {% else %}
+      <p>Informações sobre a empresa não disponíveis.</p>
+  {% endif %}
+
+
+
+   
+
+    <!-- Service Details Section -->
+    <section>
+
+   
+
+    </section><!-- /Service Details Section -->
+
+  
+
+    {% endblock %}

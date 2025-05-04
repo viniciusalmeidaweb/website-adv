@@ -1,15 +1,18 @@
-
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from website.views import HomeListView, EspecialidadeDetailView
+from website.views import HomeListView, SobreListView, EspecialidadesListView, EspecialidadeDetailView
 
 
 urlpatterns = [
+    path('tinymce/', include('tinymce.urls')),
     path('admin/', admin.site.urls),
-    path('home/', HomeListView.as_view(), name="sobre"), 
+    path('home/', HomeListView.as_view(), name="home"), 
+    path('quem-somos/', SobreListView.as_view(), name="sobre"),
+    path('especialidades/', EspecialidadesListView.as_view(), name="especialidades"),
     path('especialidade/<int:pk>/', EspecialidadeDetailView.as_view(), name='especialidade_detail'),
+    #path('contatos/', ContatosListView.as_view(), name="contatos"), 
 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

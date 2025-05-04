@@ -84,8 +84,12 @@ img.logo-site{
     
 }
 
+h1.sec-title{
+    font-size: 40px;
+}
+
 h2.sec-title{
-    font-size: 50px;
+    font-size: 40px;
        
 }
 
@@ -102,10 +106,7 @@ h5.sec-title{
 }
 
 .services {
-    
    
-  
-  
     display: grid; /* Flexbox para centralizar o conteúdo */
     /*justify-content: center; /* Alinha o conteúdo horizontalmente */
     align-items: center; /* Alinha o conteúdo verticalmente */
