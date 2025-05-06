@@ -147,16 +147,25 @@ img.logo-site{
 
 .services {
    
-    display: grid; /* Flexbox para centralizar o conteúdo */
-    /*justify-content: center; /* Alinha o conteúdo horizontalmente */
-    align-items: center; /* Alinha o conteúdo verticalmente */
-    /*text-align: center; /* Centraliza o texto */
-     
-    box-sizing: border-box; /* Inclui o padding no tamanho total do div */
-    
-    
+  background-image: url('/media/img/bg-services.jpg'); /* Coloque o caminho da sua imagem */
+  background-size: cover; /* A imagem cobre toda a área do div */
+  background-position: center; /* Centraliza a imagem */
+  min-height: 100vh; /* Define a altura do div como 100% da altura da janela */
+  display: grid; /* Flexbox para centralizar o conteúdo */
+  align-items: center; /* Alinha o conteúdo verticalmente */
+  color: white; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  box-sizing: border-box; /* Inclui o padding no tamanho total do div */
+  position: relative;
+      
      
 }
+
+.overlay.overlay-services {
+  background-color: rgba(235, 230, 226, 0.9); /* Sobreposição preta com 50% de opacidade */
+}
+
+
 
 .service-card {
     position: relative;
@@ -222,6 +231,11 @@ img.logo-site{
 }
 
 .footer-site{
-    background-color: #293A4A;
+  background-color: #1d1d1d;
+}
+
+.footer-end{
+  background-color: black;
+
 }
 

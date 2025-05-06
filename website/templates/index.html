@@ -80,63 +80,48 @@
 
 
 <!-- Seção de serviços -->
-<section class="services py-5">
-    <div class="container">
 
-      <div class="row">
-        <div class="col-sm-12">   
-          <h2 class="text-center lato-black">Atuação</h2>
-          <hr>
-        </div>
+<section class="services py-5 text-dark">
+  <div class="overlay overlay-services"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <span></span>
+        <h2 class="lato-black text-dark">Atuação</h2>
+       
+      </div>
+    </div>
+
+<div class="row">
+      {% if especialidade_list %}
+      <div class="col-lg-6 mb-4">
+        <p>
+          No nosso escritório, cada cliente é único e cada processo é tratado com seriedade, estratégia e ética.
+          Atuamos com excelência para proteger seus direitos e alcançar os melhores resultados.
+          Sua confiança é o nosso maior valor.
+        </p>
+        <a href="{% url 'especialidades' %}" class="btn btn-wbsite">Conheça Nossas Especialidades</a>
       </div>
 
-
-  <div class="row">
-    {% if especialidade_list %}
-      {% for especialidade in especialidade_list %}
-          <div class="col-sm-4">   
-            <article>           
-              <div class="card service-card">
-                <div class="card-body">
-
-                  {% if especialidade.icone %}
-                    <img class="mr-3" src="{{ especialidade.icone.url }}" alt="{{ especialidade.nome_especialidade }}">
-                  {% endif %}
-
-                    <h5 class="card-title mt-3 sec-title font-weight-bold">{{ especialidade.nome_especialidade }}</h5>
-                    <p class="card-text sec-text">{{ especialidade.resumo_especialidade }}</p>
-                    <a href="{% url 'especialidade_detail' especialidade.pk %}" class="card-link text-dark">Saiba mais</a>
-                
-                </div>  
-              </div>
-          </article>
-          </div>
-      {% endfor %}
-      
       {% else %}
-          <p>Sem cadastros de Especialidades.</p>
-    {% endif %}
-</div>
-
-<div class="row my-4">
-  <div class="col-sm-12 text-center">   
-  <a href="{% url 'especialidades' %}" class="btn btn-wbsite ">Ver áreas de atuação</a>
+      <div class="col-12 text-center">
+        <p>Sem cadastros de Especialidades.</p>
+      </div>
+      {% endif %}
 </div>
 </div>
-
-
-</div>
-</section><!-- FimSeção de serviços -->
+</section><!-- Fim Seção de serviços -->
 
 <section class="team py-5">
   <div class="container">
 
-    <div class="row">
-      <div class="col-sm-12">   
+<div class="row">
+  <div class="col-sm-12">   
         <h2 class="text-center lato-black">Equipe</h2>
         <hr>
-      </div>
-    </div>
+  </div>
+</div>
 
 
 <div class="row">
