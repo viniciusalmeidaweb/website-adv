@@ -30,7 +30,7 @@
           <div class="media-body">
             <h5 class="mt-0 font-weight-bold">{{ especialidade.nome_especialidade }}</h5>
             <p class="card-text sec-text">{{ especialidade.resumo_especialidade }}</p>
-             <a href="{% url 'especialidade_detail' especialidade.pk %}" class="card-link text-dark">Saiba mais</a>
+             <a href="{% url 'especialidade_detail' especialidade.slug %}" class="card-link text-dark">Saiba mais</a>
           </div>
       </div>
 

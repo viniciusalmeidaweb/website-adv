@@ -11,7 +11,7 @@ urlpatterns = [
     path('home/', HomeListView.as_view(), name="home"), 
     path('quem-somos/', SobreListView.as_view(), name="sobre"),
     path('especialidades/', EspecialidadesListView.as_view(), name="especialidades"),
-    path('especialidade/<int:pk>/', EspecialidadeDetailView.as_view(), name='especialidade_detail'),
+    path('especialidade/<slug:slug>/', EspecialidadeDetailView.as_view(), name='especialidade_detail'),
     #path('contatos/', ContatosListView.as_view(), name="contatos"), 
 
     

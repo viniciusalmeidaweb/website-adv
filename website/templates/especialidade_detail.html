@@ -18,13 +18,7 @@
   <div class="row">
     <div class="col-sm-12">
       
-      {% if especialidade.id == 1 %}
-          {% include "direito_previdenciario.html" %}
-      {% elif especialidade.id == 2 %}
-          {% include "direito_digital.html" %}
-      {% elif especialidade.id == 3 %}
-          {% include "direito_consumidor.html" %}
-      {% endif %}
+      <p>{{ especialidade.descricao_especialidade|safe }}</p>
                   
       </div>
     </div>

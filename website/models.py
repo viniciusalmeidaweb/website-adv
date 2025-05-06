@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
+from autoslug import AutoSlugField
 
 # Create your models here.
 class Sobre(models.Model):
@@ -18,6 +19,7 @@ class Especialidades(models.Model):
     id = models.AutoField(primary_key=True)
     icone = models.ImageField(upload_to='media/icones/', blank=True, null=True)
     nome_especialidade = models.CharField(max_length=100, blank=True,null=True)
+    slug = AutoSlugField(populate_from='nome_especialidade', unique=True, null=True, blank=True)
     descricao_especialidade = HTMLField()  # TinyMCE será aplicado aqui
     resumo_especialidade = models.CharField(max_length=255, blank=True, null=True) 
 
