@@ -81,7 +81,7 @@ body {
 }
 
 img.logo-site{
-    height: 90px;
+    height: 100px;
 }
 
 .home {
@@ -224,18 +224,22 @@ img.logo-site{
 }
 
 .btn-wbsite:hover {
-    background-color: #293A4A;
+    background-color: #9C6F20; /* tom mais escuro da cor principal */
     color: white;
     transform: scale(1.05); /* Leve aumento */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Mais destaque */
 }
 
 .footer-site{
-  background-color: #1d1d1d;
+  background-color: #293A4A;
 }
 
 .footer-end{
   background-color: black;
 
+}
+
+.bg-breadcrumb{
+  background-color: #B3852D;
 }
 

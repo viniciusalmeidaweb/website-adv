@@ -4,33 +4,33 @@
 
 <!-- Seção de destaque -->
 <section class="home">
-      <div class="overlay"></div>
-        <div class="jumbotron jumbotron-bgk">
-          <div class="container">
-            <h1 class="font-weight-bold">Advocacia <br> Especializada</h1>
-            <p>Direito consumidor, digital e previdenciário.</p>
-          </div>
-        </div>
+  <div class="overlay"></div>
+  <div class="jumbotron jumbotron-bgk">
+    <div class="container">
+      <h1 class="font-weight-bold">Advocacia <br> Especializada</h1>
+      <p>Direito consumidor, digital e previdenciário.</p>
+    </div>
+  </div>
 </section>
 <!-- Fim Seção de destaque -->
 
 
-        <!-- Seção sobre -->
+<!-- Seção sobre -->
 <section class="about py-5">
   <div class="container">
     <div class="row">
 
       <div class="col-sm-12 text-center py-5">
-      <h2 class="lato-black">Excelência, Ética e Compromisso!</h2>
-      <hr>
+        <h2 class="lato-black">Excelência, Ética e Compromisso!</h2>
+        <hr>
       </div>
 
-    <div class="col-6">
-      <div class="about-img">       
+      <div class="col-6">
+        <div class="about-img">
+        </div>
       </div>
-    </div>
 
-     <!-- {% if sobre_list %}
+      <!-- {% if sobre_list %}
       {% for sobre in sobre_list %}
       <p class="sec-text">{{ sobre.quemsomos|linebreaksbr }}</p>
       {% endfor %}
@@ -39,43 +39,45 @@
       <p>Informações sobre a empresa não disponíveis.</p>
       {% endif %}-->
 
-      
-    
-    <div class="col-6">
-
-      <ul class="list-unstyled">
-        <li class="media">
-          <img class="mr-3" src="/media/icones/002-justica.png" alt="Imagem de exemplo genérica">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1 font-weight-bold">Compromisso com a Justiça</h5>
-            <p class="sec-text">
-            Acreditamos no poder da justiça e trabalhamos com dedicação para garantir que seus direitos sejam respeitados. Nossa missão é fornecer serviços jurídicos de alta qualidade, com ética e transparência.
-          </p>
-          </div>
-        </li>
-        <li class="media my-4">
-          <img class="mr-3" src="/media/icones/003-justica-1.png" alt="Imagem de exemplo genérica">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1 font-weight-bold">Soluções Jurídicas Personalizadas</h5>
-            <p class="sec-text">
-              Defendemos seus direitos com estratégias jurídicas personalizadas para cada caso. 
-            Conte com nossa equipe experiente para resolver suas questões legais com seriedade e comprometimento.
-          </p>
-          </div>
-        </li>
-        <li class="media">
-          <img class="mr-3" src="/media/icones/005-livro-de-leis.png" alt="Imagem de exemplo genérica">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1 font-weight-bold">Confiança e Resultados</h5>
-            <p class="sec-text">Nossa história é construída com base na confiança dos nossos clientes e nos resultados que alcançamos. Trabalhamos para proporcionar segurança jurídica e soluções eficazes.</p>
-            <a href="{% url 'sobre' %}" class="btn btn-wbsite">Ver Mais</a>      
-          </div>
-        </li>
-      </ul>
 
 
+      <div class="col-6">
+
+        <ul class="list-unstyled">
+          <li class="media">
+            <img class="mr-3" src="/media/icones/002-justica.png" alt="Imagem de exemplo genérica">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1 font-weight-bold">Compromisso com a Justiça</h5>
+              <p class="sec-text">
+                Acreditamos no poder da justiça e trabalhamos com dedicação para garantir que seus direitos sejam
+                respeitados. Nossa missão é fornecer serviços jurídicos de alta qualidade, com ética e transparência.
+              </p>
+            </div>
+          </li>
+          <li class="media my-4">
+            <img class="mr-3" src="/media/icones/003-justica-1.png" alt="Imagem de exemplo genérica">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1 font-weight-bold">Soluções Jurídicas Personalizadas</h5>
+              <p class="sec-text">
+                Defendemos seus direitos com estratégias jurídicas personalizadas para cada caso.
+                Conte com nossa equipe experiente para resolver suas questões legais com seriedade e comprometimento.
+              </p>
+            </div>
+          </li>
+          <li class="media">
+            <img class="mr-3" src="/media/icones/005-livro-de-leis.png" alt="Imagem de exemplo genérica">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1 font-weight-bold">Confiança e Resultados</h5>
+              <p class="sec-text">Nossa história é construída com base na confiança dos nossos clientes e nos resultados
+                que alcançamos. Trabalhamos para proporcionar segurança jurídica e soluções eficazes.</p>
+              <a href="{% url 'sobre' %}" class="btn btn-wbsite">Ver Mais</a>
+            </div>
+          </li>
+        </ul>
+
+
+      </div>
     </div>
-  </div>
 </section>
 
 
@@ -89,19 +91,22 @@
       <div class="col-sm-6">
         <span></span>
         <h2 class="lato-black text-dark">Atuação</h2>
-       
+        <hr>
+
       </div>
     </div>
 
-<div class="row">
+    <div class="row">
       {% if especialidade_list %}
       <div class="col-lg-6 mb-4">
         <p>
-          No nosso escritório, cada cliente é único e cada processo é tratado com seriedade, estratégia e ética.
-          Atuamos com excelência para proteger seus direitos e alcançar os melhores resultados.
-          Sua confiança é o nosso maior valor.
+          Nossa atuação é focada em oferecer soluções jurídicas nas áreas de <strong>Direito Previdenciário</strong>, <strong>Direito do
+          Consumidor</strong> e <strong>Direito Digital</strong>. Com uma equipe experiente e atualizada, trabalhamos com comprometimento para
+          garantir a proteção dos seus direitos.
         </p>
         <a href="{% url 'especialidades' %}" class="btn btn-wbsite">Conheça Nossas Especialidades</a>
+      
+
       </div>
 
       {% else %}
@@ -109,47 +114,47 @@
         <p>Sem cadastros de Especialidades.</p>
       </div>
       {% endif %}
-</div>
-</div>
+    </div>
+  </div>
 </section><!-- Fim Seção de serviços -->
 
 <section class="team py-5">
   <div class="container">
 
-<div class="row">
-  <div class="col-sm-12">   
+    <div class="row">
+      <div class="col-sm-12">
         <h2 class="text-center lato-black">Equipe</h2>
         <hr>
-  </div>
-</div>
+      </div>
+    </div>
 
 
-<div class="row">
+    <div class="row">
       {% if equipe_list %}
       {% for equipe in equipe_list %}
-          <div class="col-sm-6 text-dark text-center">   
-            <article>           
-              <div class="card border-0 bg-transparent">
-                  <img class="card-img-top img-ajustada" src="{{ equipe.photo.url }}" alt="Imagem de capa do card">
-              <div class="card-header bg-transparent">
-                <h5 class="mb-0 sec-title font-weight-bold">{{ equipe.nome_adv }}</h5>
-              </div>
+      <div class="col-sm-6 text-dark text-center">
+        <article>
+          <div class="card border-0 bg-transparent">
+            <img class="card-img-top img-ajustada" src="{{ equipe.photo.url }}" alt="Imagem de capa do card">
+            <div class="card-header bg-transparent">
+              <h5 class="mb-0 sec-title font-weight-bold">{{ equipe.nome_adv }}</h5>
+            </div>
 
-              <div class="card-body">
-                <p class="card-text text-dark">{{ equipe.perfil_adv|linebreaksbr }}</p>
-              </div>
-              
-              </div>
-            </article>
+            <div class="card-body">
+              <p class="card-text text-dark">{{ equipe.perfil_adv|linebreaksbr }}</p>
+            </div>
+
           </div>
+        </article>
+      </div>
       {% endfor %}
-      
-      {% else %}
-          <p>Sem cadastros de Equipe.</p>
-    {% endif %}
-</div>
 
- </div>
+      {% else %}
+      <p>Sem cadastros de Equipe.</p>
+      {% endif %}
+    </div>
+
+  </div>
 </section>
 
 

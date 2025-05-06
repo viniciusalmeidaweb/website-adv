@@ -4,7 +4,7 @@
 
 
 <!-- Page Title -->
-<div class="py-5 mb-4 bg-light">
+<div class="py-5 mb-4 bg-breadcrumb text-light">
   <div class="container">
     <div class="row">
       <div class="container-fluid">
@@ -19,21 +19,9 @@
 <section>
 <div class="container">
   <div class="row">
-    <!--  <div class="col-sm-4">
-      <div class="list-group">
-        <div class="list-group-item bg-light">
-            <h4 class="sec-title font-weight-bold mb-0">Especialidades</h4>
-        </div>
-      {% for especialidade_item in especialidade_lista_itens %}
-        <a href="{% url 'especialidade_detail' especialidade_item.pk %}" class="list-group-item list-group-item-action">
-          {{ especialidade_item.nome_especialidade }}
-        </a>
-      {% endfor %}
-      </div>
-    </div>-->
-
-    <div class="col-sm-12">
-
+    <div class="col-sm-6">
+      <h2 class="font-weight-bold">Um pouco da nossa história</h2>
+      <hr>
       {% if sobre_list %}
           {% for sobre in sobre_list %}
           <p class="sec-text">{{ sobre.quemsomos|linebreaksbr }}</p>
@@ -43,7 +31,28 @@
           <p>Informações sobre a empresa não disponíveis.</p>
       {% endif %}
     
-      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <h2 class="font-weight-bold">Nossas Especialidades</h2>
+      <hr>
+      <h5 class="font-weight-bold">Direito Previdenciário</h5>
+      <p>Atendimento especializado em aposentadorias, pensões, auxílio-doença, revisão de benefícios e demais demandas contra o INSS. 
+        Atuamos para garantir seus direitos de forma segura e ágil.
+      </p>
+
+      <h5 class="font-weight-bold">Direito do Consumidor</h5>
+        <p>Defesa do consumidor em casos de cobranças indevidas, produtos com defeito, cancelamentos, fraudes,
+          e outros conflitos com empresas ou prestadores de serviço.
+        </p>
+
+      <h5 class="font-weight-bold">Direito Digital</h5>
+      <p>Atuação em questões jurídicas relacionadas ao ambiente virtual, como crimes cibernéticos, uso indevido de imagem,
+        fraudes online, proteção de dados e privacidade digital.
+      </p>
+
+    </div>
+
   </div>
 </div>
 </section>
