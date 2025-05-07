@@ -19,7 +19,6 @@
 <section class="about py-5">
   <div class="container">
     <div class="row">
-
       <div class="col-sm-12 text-center py-5">
         <h2 class="lato-black">Excelência, Ética e Compromisso!</h2>
         <hr>
@@ -30,19 +29,7 @@
         </div>
       </div>
 
-      <!-- {% if sobre_list %}
-      {% for sobre in sobre_list %}
-      <p class="sec-text">{{ sobre.quemsomos|linebreaksbr }}</p>
-      {% endfor %}
-
-      {% else %}
-      <p>Informações sobre a empresa não disponíveis.</p>
-      {% endif %}-->
-
-
-
       <div class="col-6">
-
         <ul class="list-unstyled">
           <li class="media">
             <img class="mr-3" src="/media/icones/002-justica.png" alt="Imagem de exemplo genérica">
@@ -74,25 +61,20 @@
             </div>
           </li>
         </ul>
-
-
       </div>
     </div>
 </section>
 
 
 <!-- Seção de serviços -->
-
 <section class="services py-5 text-dark">
   <div class="overlay overlay-services"></div>
-
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
         <span></span>
         <h2 class="lato-black text-dark">Atuação</h2>
         <hr>
-
       </div>
     </div>
 
@@ -100,15 +82,12 @@
       {% if especialidade_list %}
       <div class="col-lg-6 mb-4">
         <p>
-          Nossa atuação é focada em oferecer soluções jurídicas nas áreas de <strong>Direito Previdenciário</strong>, <strong>Direito do
-          Consumidor</strong> e <strong>Direito Digital</strong>. Com uma equipe experiente e atualizada, trabalhamos com comprometimento para
-          garantir a proteção dos seus direitos.
+          Nossa atuação é focada em oferecer soluções jurídicas nas áreas de <strong>Direito Previdenciário</strong>,
+          <strong>Direito do Consumidor</strong> e <strong>Direito Digital</strong>. Com uma equipe experiente e atualizada, trabalhamos
+          com comprometimento para garantir a proteção dos seus direitos.
         </p>
         <a href="{% url 'especialidades' %}" class="btn btn-wbsite">Conheça Nossas Especialidades</a>
-      
-
       </div>
-
       {% else %}
       <div class="col-12 text-center">
         <p>Sem cadastros de Especialidades.</p>
@@ -120,14 +99,12 @@
 
 <section class="team py-5">
   <div class="container">
-
     <div class="row">
       <div class="col-sm-12">
         <h2 class="text-center lato-black">Equipe</h2>
         <hr>
       </div>
     </div>
-
 
     <div class="row">
       {% if equipe_list %}
@@ -139,23 +116,18 @@
             <div class="card-header bg-transparent">
               <h5 class="mb-0 sec-title font-weight-bold">{{ equipe.nome_adv }}</h5>
             </div>
-
             <div class="card-body">
               <p class="card-text text-dark">{{ equipe.perfil_adv|linebreaksbr }}</p>
             </div>
-
           </div>
         </article>
       </div>
       {% endfor %}
-
       {% else %}
       <p>Sem cadastros de Equipe.</p>
       {% endif %}
     </div>
-
   </div>
 </section>
-
 
 {% endblock %}

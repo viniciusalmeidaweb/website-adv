@@ -16,15 +16,24 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      
+    <div class="col-sm-8">
       <p>{{ especialidade.descricao_especialidade|safe }}</p>
-                  
+    </div>
+
+    <div class="col-sm-4">
+      <div class="list-group">
+        <div class="card-header border">
+          <h5 class="font-weight-bold mb-0">Especialidades</h5>
+        </div>
+        {% for especialidade in especialidade_list %}
+        <a href="{% url 'especialidade_detail' especialidade.slug %}" class="list-group-item list-group-item-action">
+          {{ especialidade.nome_especialidade }}
+        </a>
+        {% endfor %}
       </div>
     </div>
   </div>
 </div>
-
 
 
    
