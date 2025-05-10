@@ -7,87 +7,103 @@
 <div class="py-5 mb-4 bg-breadcrumb text-light">
   <div class="container">
     <div class="row">
-      <div class="container-fluid">
+      <div class="col-sm-12 text-center">
         <h1 class="font-weight-bold">Quem somos</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent text-center justify-content-center">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-light">Inicio</a></li>
+            <li class="breadcrumb-item active text-dark" aria-current="page">Quem Somos</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
 </div>
- <!-- End Page Title -->
+<!-- End Page Title -->
 
 
-<section>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <h2 class="font-weight-bold">Um pouco da nossa história</h2>
-      <hr>
-      {% if sobre_list %}
-          {% for sobre in sobre_list %}
-          <p class="sec-text">{{ sobre.quemsomos|linebreaksbr }}</p>
-          {% endfor %}
-    
-          {% else %}
-          <p>Informações sobre a empresa não disponíveis.</p>
-      {% endif %}
-    
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2 class="font-weight-bold">Um pouco da nossa história</h2>
+        <hr>
+        {% if sobre_list %}
+        {% for sobre in sobre_list %}
+        <p class="sec-text">{{ sobre.quemsomos|linebreaksbr }}</p>
+        {% endfor %}
+
+        {% else %}
+        <p>Informações sobre a empresa não disponíveis.</p>
+        {% endif %}
+
+      </div>
+
+      <div class="col-sm-6">
+
+        <h2 class="font-weight-bold">Nossas Especialidades</h2>
+        <hr>
+        {% if especialidade_list %}
+        {% for especialidade in especialidade_list %}
+        <div class="media mb-4">
+
+          {% if especialidade.icone %}
+          <img class="mr-3" src="{{ especialidade.icone.url }}" alt="{{ especialidade.nome_especialidade }}">
+          {% endif %}
+          <div class="media-body">
+            <h5 class="mt-0 font-weight-bold">{{ especialidade.nome_especialidade }}</h5>
+            <p class="card-text sec-text">{{ especialidade.resumo_especialidade }}</p>
+            <a href="{% url 'especialidade_detail' especialidade.slug %}" class="card-link text-dark">Saiba mais</a>
+          </div>
+        </div>
+
+        {% endfor %}
+        {% else %}
+        <p>Sem cadastros de Especialidades.</p>
+        {% endif %}
+
+
+      </div>
+
     </div>
-
-    <div class="col-sm-6">
-      <h2 class="font-weight-bold">Nossas Especialidades</h2>
-      <hr>
-      <h5 class="font-weight-bold">Direito Previdenciário</h5>
-      <p>Atendimento especializado em aposentadorias, pensões, auxílio-doença, revisão de benefícios e demais demandas contra o INSS. 
-        Atuamos para garantir seus direitos de forma segura e ágil.
-      </p>
-
-      <h5 class="font-weight-bold">Direito do Consumidor</h5>
-        <p>Defesa do consumidor em casos de cobranças indevidas, produtos com defeito, cancelamentos, fraudes,
-          e outros conflitos com empresas ou prestadores de serviço.
-        </p>
-
-      <h5 class="font-weight-bold">Direito Digital</h5>
-      <p>Atuação em questões jurídicas relacionadas ao ambiente virtual, como crimes cibernéticos, uso indevido de imagem,
-        fraudes online, proteção de dados e privacidade digital.
-      </p>
-
-    </div>
-
   </div>
-</div>
 </section>
 
-<section class="team py-5">
-  <div class="container">
 
-<div class="row">
+<section class="team py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2 class="text-center lato-black">Equipe</h2>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
       {% if equipe_list %}
       {% for equipe in equipe_list %}
-          <div class="col-sm-6 text-dark text-center">   
-            <article>           
-              <div class="card border-0 bg-transparent">
-                  <img class="card-img-top img-ajustada" src="{{ equipe.photo.url }}" alt="Imagem de capa do card">
-              <div class="card-header bg-transparent">
-                <h5 class="mb-0 font-weight-bold">{{ equipe.nome_adv }}</h5>
-              </div>
-
-              <div class="card-body">
-                <p class="card-text text-dark">{{ equipe.perfil_adv|linebreaksbr }}</p>
-              </div>
-              
-              </div>
-            </article>
+      <div class="col-sm-6 text-dark text-center">
+        <article>
+          <div class="card border-0 bg-transparent">
+            <img class="rounded img-ajustada" src="{{ equipe.photo.url }}" alt="{{ equipe.nome_adv }}">
+            <div class="card-header bg-transparent">
+              <h5 class="mb-0 sec-title font-weight-bold">{{ equipe.nome_adv }}</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text text-dark">{{ equipe.perfil_adv|linebreaksbr }}</p>
+            </div>
           </div>
+        </article>
+      </div>
       {% endfor %}
-      
       {% else %}
-          <p>Sem cadastros de Equipe.</p>
-    {% endif %}
-</div>
-</div>
+      <p>Sem cadastros de Equipe.</p>
+      {% endif %}
+    </div>
+  </div>
 </section>
- 
 
-  
 
-    {% endblock %}
+
+
+{% endblock %}

@@ -8,14 +8,14 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="sec-title font-weight-bold text-center">{{ especialidade.nome_especialidade }}</h1>
+        <h1 class="sec-title font-weight-bold text-center">{{ post.titulo }}</h1>
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent text-center justify-content-center">
             <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-light">Inicio</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'especialidades' %}" class="text-light">Especialidades</a></li>
-            <li class="breadcrumb-item active text-dark" aria-current="{{ especialidade.nome_especialidade }}">
-              {{ especialidade.nome_especialidade }}
+            <li class="breadcrumb-item"><a href="{% url 'blog' %}" class="text-light">Blog</a></li>
+            <li class="breadcrumb-item active text-dark" aria-current="{{ post_detail.titulo }}">
+              {{ post_detail.titulo }}
             </li>
           </ol>
         </nav>
@@ -28,13 +28,13 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8">
-        <p>{{ especialidade.descricao_especialidade|safe }}</p>
+        <p>{{ post_detail.conteudo|safe }}</p>
       </div>
 
       <div class="col-sm-4">
         <div class="list-group">
           <div class="card-header border">
-            <h5 class="font-weight-bold mb-0">Especialidades</h5>
+            <h5 class="font-weight-bold mb-0">Categorias</h5>
           </div>
           {% for especialidade in especialidade_list %}
           <a href="{% url 'especialidade_detail' especialidade.slug %}" class="list-group-item list-group-item-action">

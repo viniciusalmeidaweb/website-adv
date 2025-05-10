@@ -34,9 +34,9 @@
         </button>
       
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
+              <a class="nav-link" href="{% url 'home' %}">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'sobre' %}">Quem Somos</a>
@@ -95,6 +95,21 @@
   </div>
 </div>
 
+
+<div class="col-lg-3">
+  <h5 class="font-weight-bold text-light sec-title">Links</h5>
+  <ul class="nav flex-column">
+
+    {% for especialidade in especialidade_list %}
+    <li class="nav-item">
+      <a href="{% url 'especialidade_detail' especialidade.slug %}" class="link text-light lato-light">
+        {{ especialidade.nome_especialidade }}
+      </a>
+      {% endfor %}
+    </li>
+   </ul>
+</div>
+
 <div class="col-lg-3">
   <h5 class="font-weight-bold text-light sec-title">Redes Sociais</h5>
   <div class="d-flex align-items-center text-light mb-2">
@@ -103,24 +118,7 @@
   </div>
 </div>
 
-<div class="col-lg-3">
-  <h5 class="font-weight-bold text-light sec-title">Especialidades</h5>
-  <ul class="nav flex-column">
 
-    <li class="nav-item">
-      <a class="" aria-current="page" href="#">Active</a>
-    </li>
-
-    <li class="nav-item">
-      <a class="" href="#">Link</a>
-    </li>
-
-    <li class="nav-item">
-      <a class="" href="#">Link</a>
-      <i class="fa5s fa5-phone-alt" style="font-size: 17px ;color: #AB9169 ;margin-right: 10px ;"></i>
-    </li>
-  </ul>
-</div>
 
 </div>
 </div>

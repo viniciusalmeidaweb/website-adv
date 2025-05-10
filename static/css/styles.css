@@ -122,10 +122,9 @@ img.logo-site{
     background-position: center;
     min-height: 550px;
     background-repeat: no-repeat;
-    border-radius: 20px;
     transition: all 0.3s ease-in-out; /* Transição suave */
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  
+
     
 }
 
@@ -137,12 +136,8 @@ img.logo-site{
 }
 
 
-
 .about{
-    /*background-color: #B3852D;*/
-    /*background-color: #293A4A;*/
-    background-image:  url('/media/img/shape.png');
-
+   background-image:  url('/media/img/shape.png');
 }
 
 .services {
@@ -157,19 +152,22 @@ img.logo-site{
   padding: 20px; /* Espaçamento interno */
   box-sizing: border-box; /* Inclui o padding no tamanho total do div */
   position: relative;
-      
-     
+       
 }
 
 .overlay.overlay-services {
-  background-color: rgba(235, 230, 226, 0.9); /* Sobreposição preta com 50% de opacidade */
+  background-color: rgba(235, 230, 226, 0.9); /* Sobreposição preta com 90% de opacidade */
+}
+
+img.card-icone{
+  width: 64px;
+  height: 64px;
 }
 
 .service-card {
     position: relative;
     box-shadow: 0 0 6px rgba(0, 0, 0, .04);
     background-color: #f5f5f5;
-    border-radius: 20px;
     border-bottom: 6px solid #293A4A;
     border-top: 0px;
     border-left: 0px;
@@ -185,7 +183,6 @@ img.logo-site{
 
 .team{
     background-color: #f5f5f5;
-    background-image:  url('/media/img/team-shape.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
@@ -197,7 +194,7 @@ img.logo-site{
     height: 500px;
     object-fit: cover;
     object-position: top;
-    border-radius: 20px;
+    border-radius: 8px;
     transition: all 0.3s ease-in-out; /* Transição suave */
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
@@ -214,7 +211,6 @@ img.logo-site{
     font-weight: 300;
     padding: 12px 24px;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -232,7 +228,7 @@ img.logo-site{
 }
 
 .footer-end{
-  background-color: black;
+  background-color: #B3852D;
 
 }
 

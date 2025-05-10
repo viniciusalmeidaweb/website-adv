@@ -7,8 +7,14 @@
 <div class="py-5 mb-4 bg-breadcrumb text-light">
   <div class="container">
     <div class="row">
-      <div class="container-fluid">
+      <div class="col-lg-12 text-center">
         <h1 class="font-weight-bold">Especialidades</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent text-center justify-content-center">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-light">Inicio</a></li>
+            <li class="breadcrumb-item active text-dark" aria-current="page">Especialidades</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
@@ -19,8 +25,32 @@
 <section class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        {% if especialidade_list %}
+      {% if especialidade_list %}
+      {% for especialidade in especialidade_list %}
+      <div class="col-sm-4 text-center">
+
+        <div class="card service-card">
+            <div class="card-body">
+            {% if especialidade.icone %}
+            <img class="mb-3" src="{{ especialidade.icone.url }}" alt="{{ especialidade.nome_especialidade }}">
+            {% endif %}
+            <h5 class="card-title font-weight-bold">{{ especialidade.nome_especialidade }}</h5>
+            <p class="card-text">{{ especialidade.resumo_especialidade }}</p>
+            <a href="{% url 'especialidade_detail' especialidade.slug %}" class="card-link text-dark">Saiba mais</a>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+      {% else %}
+      <p>Sem cadastros de Especialidades.</p>
+      {% endif %}
+    </div>
+  </div>
+  </div>
+</section>
+
+     <!--    {% if especialidade_list %}
         {% for especialidade in especialidade_list %}
       <div class="media mb-4">
              
@@ -37,10 +67,8 @@
       {% endfor %}
       {% else %}
           <p>Sem cadastros de Especialidades.</p>
-      {% endif %}
-</div>
-</div>
-</div>
-</section>
+      {% endif %}-->
+
+
 
     {% endblock %}

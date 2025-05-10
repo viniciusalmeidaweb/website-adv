@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Sobre, Especialidades, Depoimentos, Equipe
+from .models import Sobre, Especialidades, Depoimentos, Equipe, Post, Categoria
 from django.views.generic import ListView, DetailView
 
 
@@ -14,6 +14,20 @@ class ContextoPadraoMixin:
 class HomeListView(ContextoPadraoMixin, ListView):
     model = Sobre
     template_name = 'index.html'
+
+
+class BlogListView(ListView):
+    model = Post
+    template_name = 'blog.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Post.objects.filter(publicado=True).order_by('-data_criacao')
+    
+class BlogDetailView(DetailView):
+    model = Post
+    template_name = 'blog_detail.html'
+    context_object_name = 'post_detail'
 
 class SobreListView(ContextoPadraoMixin, ListView):
     model = Sobre

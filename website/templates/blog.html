@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Page Title -->
+<div class="py-5 mb-4 bg-breadcrumb text-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1 class="font-weight-bold">Blog</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent text-center justify-content-center">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-light">Inicio</a></li>
+            <li class="breadcrumb-item active text-dark" aria-current="page">Blog</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+</div>
+</div>
+
+
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        {% if posts %}
+        {% for post in posts %}
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="{{ post.photo_blog.url}}" alt="{{ post.titulo }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.titulo }}</h5>
+              <!-- <p class="card-text">{{ post.conteudo|safe }}</p> -->
+              <p class="card-text"><small class="text-muted">{{ post.data_criacao }}</small></p>
+              <a href="{% url 'post_detail' post.slug %}" class="list-group-item list-group-item-action">Ler</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section><!-- /blog -->
+
+  
+
+{% endblock %}
