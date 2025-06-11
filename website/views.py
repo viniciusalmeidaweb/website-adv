@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Sobre, Especialidades, Depoimentos, Equipe, Post, Categoria
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import FormView
+from django.urls import reverse_lazy
+from .forms import ContatoForm
 
 
 class ContextoPadraoMixin:
@@ -42,3 +45,20 @@ class EspecialidadeDetailView(ContextoPadraoMixin, DetailView):
     model = Especialidades
     template_name = 'especialidade_detail.html'
     context_object_name = 'especialidade'
+
+class ContatoView(FormView):
+    template_name = 'contato.html'
+    form_class = ContatoForm
+    success_url = reverse_lazy('contato')  # Redireciona após o envio
+
+    def form_valid(self, form):
+        # Aqui você pode enviar email, salvar no banco, etc.
+        nome = form.cleaned_data['nome']
+        email = form.cleaned_data['email']
+        telefone = form.cleaned_data['telefone']
+        mensagem = form.cleaned_data['mensagem']
+
+        # Exemplo: imprimir no console
+        print(f"Mensagem de {nome}, {telefone}, <{email}>: {mensagem}")
+
+        return super().form_valid(form)

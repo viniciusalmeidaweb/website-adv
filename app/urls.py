@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from website.views import HomeListView, SobreListView, EspecialidadesListView, EspecialidadeDetailView, BlogListView, BlogDetailView
+from website.views import HomeListView, SobreListView, EspecialidadesListView, EspecialidadeDetailView, BlogListView, BlogDetailView, ContatoView
 
 
 urlpatterns = [
@@ -14,7 +14,7 @@ urlpatterns = [
     path('quem-somos/', SobreListView.as_view(), name="sobre"),
     path('especialidades/', EspecialidadesListView.as_view(), name="especialidades"),
     path('especialidade/<slug:slug>/', EspecialidadeDetailView.as_view(), name='especialidade_detail'),
-    #path('contatos/', ContatosListView.as_view(), name="contatos"), 
+    path('contato/', ContatoView.as_view(), name="contatos"), 
 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

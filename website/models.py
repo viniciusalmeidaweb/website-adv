@@ -3,6 +3,7 @@ from django.utils import timezone
 from tinymce.models import HTMLField
 from autoslug import AutoSlugField
 
+
 # Create your models here.
 class Sobre(models.Model):
     id = models.AutoField(primary_key=True)
@@ -76,3 +77,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+    
