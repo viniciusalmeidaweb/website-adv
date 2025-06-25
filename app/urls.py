@@ -8,7 +8,7 @@ from website.views import HomeListView, SobreListView, EspecialidadesListView, E
 urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('admin/', admin.site.urls),
-    path('home/', HomeListView.as_view(), name="home"), 
+    path('', HomeListView.as_view(), name="home"), 
     path('blog/', BlogListView.as_view(), name="blog"), 
     path('blog/<slug:slug>/', BlogDetailView.as_view(), name="post_detail"), 
     path('quem-somos/', SobreListView.as_view(), name="sobre"),
