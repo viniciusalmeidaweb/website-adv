@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
 import os
-from website.views import HomeListView, SobreListView, EspecialidadesListView, EspecialidadeDetailView, BlogListView, BlogDetailView, ContatoView
+from website.views import HomeListView, SobreListView, EspecialidadesListView, EspecialidadeDetailView, BlogListView, BlogDetailView, ContatoView, CategoriaDetailView
 
 
 urlpatterns = [
@@ -13,7 +13,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeListView.as_view(), name="home"), 
     path('blog/', BlogListView.as_view(), name="blog"), 
-    path('blog/<slug:slug>/', BlogDetailView.as_view(), name="post_detail"), 
+    path('blog/<slug:categoria_slug>/<slug:post_slug>/', BlogDetailView.as_view(), name="post_detail"), 
+    path('categoria/<slug:slug>/', CategoriaDetailView.as_view(), name='categoria_detail'),
     path('quem-somos/', SobreListView.as_view(), name="sobre"),
     path('especialidades/', EspecialidadesListView.as_view(), name="especialidades"),
     path('especialidade/<slug:slug>/', EspecialidadeDetailView.as_view(), name='especialidade_detail'),

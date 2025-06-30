@@ -181,6 +181,11 @@ img.card-icone{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Mais destaque */
 }
 
+.card-img-top{
+  object-fit: cover;   /* Cobre a área mantendo proporção */
+  height: 100%;        /* Ocupa toda a altura disponível */
+}
+
 .team{
     background-color: #f5f5f5;
     background-repeat: no-repeat;

@@ -2,6 +2,9 @@ from django.contrib import admin
 from website.models import Sobre, Especialidades,Depoimentos,Equipe, Post, Categoria
 
 # Register your models here.
+class CategoriaAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'slug') 
+
 class SobreAdmin(admin.ModelAdmin):
     list_display = ('quemsomos',) 
 

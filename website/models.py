@@ -60,6 +60,7 @@ class Equipe(models.Model):
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=100, unique=True)
+    slug = AutoSlugField(unique=True, null=True, blank=True, populate_from='nome')
 
     def __str__(self):
         return self.nome

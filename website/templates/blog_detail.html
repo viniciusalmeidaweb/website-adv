@@ -8,8 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="sec-title font-weight-bold text-center">{{ post.titulo }}</h1>
-
+        <h1 class="sec-title font-weight-bold text-center">{{ post_detail.titulo }}</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent text-center justify-content-center">
             <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-light">Inicio</a></li>
@@ -30,15 +29,14 @@
       <div class="col-sm-8">
         <p>{{ post_detail.conteudo|safe }}</p>
       </div>
-
       <div class="col-sm-4">
         <div class="list-group">
           <div class="card-header border">
             <h5 class="font-weight-bold mb-0">Categorias</h5>
           </div>
-          {% for especialidade in especialidade_list %}
-          <a href="{% url 'especialidade_detail' especialidade.slug %}" class="list-group-item list-group-item-action">
-            {{ especialidade.nome_especialidade }}
+          {% for categoria in categoria_list %}
+          <a href="{% url 'categoria_detail' categoria.slug %}" class="list-group-item list-group-item-action">
+            {{ categoria.nome }}
           </a>
           {% endfor %}
         </div>
@@ -46,7 +44,5 @@
     </div>
   </div>
 </section><!-- /Service Details Section -->
-
-
 
 {% endblock %}
