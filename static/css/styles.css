@@ -181,7 +181,7 @@ img.card-icone{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Mais destaque */
 }
 
-.card-img-top{
+.card-img-blog{
   object-fit: cover;   /* Cobre a área mantendo proporção */
   height: 100%;        /* Ocupa toda a altura disponível */
 }
