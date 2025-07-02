@@ -72,7 +72,7 @@ class Categoria(models.Model):
 class Post(models.Model):
     titulo = models.CharField(max_length=200)
     photo_blog = models.ImageField(upload_to='blog/', blank=True, null=True)
-    slug = AutoSlugField(populate_from='titulo', unique=True, null=True, blank=True)
+    slug = AutoSlugField(populate_from='titulo', unique=True, null=True, blank=True, max_length=200)
     conteudo = HTMLField()  # TinyMCE será aplicado aqui
     data_criacao = models.DateTimeField(default=timezone.now)
     publicado = models.BooleanField(default=False)
