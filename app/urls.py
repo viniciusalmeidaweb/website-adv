@@ -5,16 +5,34 @@ from django.conf.urls.static import static
 from django.views.static import serve
 import os
 from website.views import HomeListView, SobreListView, EspecialidadesListView, EspecialidadeDetailView, BlogListView, BlogDetailView, ContatoView, CategoriaDetailView
+from website.sitemaps import (StaticViewSitemap, CategoriaSitemap, PostSitemap, EspecialidadeSitemap)
+from django.contrib.sitemaps.views import sitemap
 
+sitemaps = {
+    'static': StaticViewSitemap,
+    'categorias': CategoriaSitemap,
+    'posts': PostSitemap,
+    'especialidades': EspecialidadeSitemap,
+}
 
 urlpatterns = [
-    path('sitemap.xml', lambda request: serve(request, 'sitemap.xml', os.path.join(settings.BASE_DIR))),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('tinymce/', include('tinymce.urls')),
     path('admin/', admin.site.urls),
+    # Página inicial
     path('', HomeListView.as_view(), name="home"), 
-    path('blog/', BlogListView.as_view(), name="blog"), 
+  
+      
+    # Blog - Categorias (mais específico vem primeiro)
+    path('blog/categoria/<slug:slug>/', CategoriaDetailView.as_view(), name='categoria_detail'),
+
+    # Blog - Detalhe do post (rota mais genérica vem depois)
     path('blog/<slug:categoria_slug>/<slug:post_slug>/', BlogDetailView.as_view(), name="post_detail"), 
-    path('categoria/<slug:slug>/', CategoriaDetailView.as_view(), name='categoria_detail'),
+
+    # Blog - Lista geral
+    path('blog/', BlogListView.as_view(), name="blog"), 
+
+    # Páginas estáticas
     path('quem-somos/', SobreListView.as_view(), name="sobre"),
     path('especialidades/', EspecialidadesListView.as_view(), name="especialidades"),
     path('especialidade/<slug:slug>/', EspecialidadeDetailView.as_view(), name='especialidade_detail'),
