@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 from .forms import ContatoForm
+from django.db.models import Count, Q 
 
 
 class ContextoPadraoMixin:
@@ -12,7 +13,9 @@ class ContextoPadraoMixin:
         context = super().get_context_data(**kwargs)
         context['especialidade_list'] = Especialidades.objects.all()
         context['equipe_list'] = Equipe.objects.all()
-        context['categoria_list'] = Categoria.objects.all()
+        context['categoria_list'] =  Categoria.objects.annotate(
+            num_posts=Count('post', filter=Q(post__publicado=True))
+        ).filter(num_posts__gt=0)
         return context
   
 # Página inicial
