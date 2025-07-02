@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from tinymce.models import HTMLField
 from autoslug import AutoSlugField
+from django.utils.text import Truncator
+from django.utils.html import strip_tags
 
 
 # Create your models here.
@@ -79,3 +81,7 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo
     
+    @property
+    def resumo(self):
+        texto_limpo = strip_tags(self.conteudo)  # remove HTML
+        return Truncator(texto_limpo).words(20, truncate='...')  # limita caracteres

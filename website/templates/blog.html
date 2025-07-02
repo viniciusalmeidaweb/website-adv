@@ -22,7 +22,7 @@
 
 <section class="py-5">
   <div class="container">
-    <div class="row ">
+    <div class="row">
 
       <!-- Coluna principal com os cards de posts -->
       <div class="col-md-8">
@@ -36,7 +36,7 @@
             <div class="col-md-7">
               <div class="card-body">
                 <h5 class="card-title">{{ post.titulo }}</h5>
-                <p class="card-text"><small class="text-muted">{{ post.conteudo|safe }}</small></p>
+                <p class="card-text"><small class="text-muted">{{ post.resumo|safe }}</small></p>
                 <p class="card-text"><small class="text-muted">{{ post.data_criacao }}</small></p>
                 <a href="{% url 'post_detail' categoria_slug=post.categoria.slug post_slug=post.slug %}">Leia mais</a>
               </div>
